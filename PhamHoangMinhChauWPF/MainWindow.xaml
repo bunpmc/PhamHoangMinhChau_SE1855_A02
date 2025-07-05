@@ -1,0 +1,57 @@
+﻿<Window x:Class="PhamHoangMinhChauWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhamHoangMinhChauWPF"
+        mc:Ignorable="d"
+        Title="Lucy Sales Management System" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen" Background="#F5F5F5">
+    <Window.Resources>
+        <Style x:Key="SimpleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="0,8"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#005EA6"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Lucy Sales Management System"
+               FontSize="22" 
+               FontWeight="Bold"
+               FontFamily="Segoe UI"
+               Foreground="#333333"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top"
+               Margin="0,40,0,0"/>
+
+        <Label Content="PRN212 Assignment 02"
+               FontSize="14" 
+               FontWeight="SemiBold"
+               FontFamily="Segoe UI"
+               Foreground="#555555"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top"
+               Margin="0,80,0,0"/>
+
+        <StackPanel VerticalAlignment="Top" 
+                    HorizontalAlignment="Left" 
+                    Width="300" Margin="255,148,0,0">
+            <Button x:Name="btnManageCustomer" Content="Manage Customers" 
+                    Style="{StaticResource SimpleButtonStyle}" Click="btnManageCustomer_Click" />
+            <Button x:Name="ManageProductsAndCategories" Content="Manage Products and Categories" 
+                    Style="{StaticResource SimpleButtonStyle}" Click="ManageProductsAndCategories_Click"/>
+            <Button x:Name="btnManageEmployee" Content="Employee Login and Profile" 
+                    Style="{StaticResource SimpleButtonStyle}"/>
+            <Button x:Name="btnManageOrder" Content="Process Orders" 
+                    Style="{StaticResource SimpleButtonStyle}"/>
+            <Button x:Name="btnExit" Content="Quit to Log In Window" 
+                    Style="{StaticResource SimpleButtonStyle}" Click="btnExit_Click" 
+                    />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="PhamHoangMinhChauWPF.AddOrderDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add New Order" Height="500" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Header="Order Information" Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Order ID:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtId" Margin="0,2,0,2"/>
+                <Label Grid.Row="1" Content="Customer:"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cbCustomer" DisplayMemberPath="Name" Margin="0,2,0,2"/>
+                <Label Grid.Row="2" Content="Employee:"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cbEmployee" DisplayMemberPath="Name" Margin="0,2,0,2"/>
+                <Label Grid.Row="3" Content="Order Date:"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" x:Name="dpDate" Margin="0,2,0,2"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Order Details" Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Row="0" x:Name="OrderDetailsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,0,146,5" SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Product" Binding="{Binding Product.Name}" Width="*"/>
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="80"/>
+                        <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice, StringFormat=C}" Width="100"/>
+                        <DataGridTextColumn Header="Discount" Binding="{Binding Discount, StringFormat=P0}" Width="80"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,5,0,5">
+                    <ComboBox x:Name="cbProduct" DisplayMemberPath="Name" SelectedValuePath="ProductId" Width="160" Margin="0,0,5,0"/>
+                    <TextBox x:Name="txtQuantity" Width="75" Margin="0,0,5,0" Text="1"/>
+                    <TextBox x:Name="txtPrice" Width="98" Margin="0,0,5,0"/>
+                    <TextBox x:Name="txtDiscount" Width="74" Margin="0,0,5,0" Text="0"/>
+                    <Button x:Name="btnAdd" Content="Add Detail" Click="AddOrderDetail_Click" Width="80"/>
+                </StackPanel>
+                <Button x:Name="btnRemove" Grid.Row="2" Content="Remove Selected Detail" Click="RemoveOrderDetail_Click" Width="150" HorizontalAlignment="Left"/>
+            </Grid>
+        </GroupBox>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Save" Width="80" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Cancel" Width="80" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
