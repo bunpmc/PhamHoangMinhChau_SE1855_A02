@@ -30,5 +30,12 @@ namespace PhamHoangMinhChauWPF
             loginWindow.Show();
             Close();
         }
+
+        private void btnCustomerLogin_Click(object sender, RoutedEventArgs e)
+        {
+            LoginCustomerWindow loginWindow = new LoginCustomerWindow();
+            loginWindow.Show();
+            Close();
+        }
     }
 }

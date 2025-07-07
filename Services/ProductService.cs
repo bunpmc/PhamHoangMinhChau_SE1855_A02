@@ -16,6 +16,11 @@ namespace Services
             _productRepository = new ProductRepository();
         }
 
+        public Product? GetProductById(int productId)
+        {
+            return _productRepository.GetProductById(productId);
+        }
+
         public bool AddProduct(Product product)
         {
             return _productRepository.AddProduct(product);

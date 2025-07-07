@@ -19,6 +19,11 @@ namespace Services
         {
             _customerRepository = new CustomerRepository();
         }
+
+        public Customer? Login(string phone)
+        {
+            return _customerRepository.Login(phone);
+        }
         public bool AddCustomer(Customer newCustomer)
         {
             return _customerRepository.AddCustomer(newCustomer);

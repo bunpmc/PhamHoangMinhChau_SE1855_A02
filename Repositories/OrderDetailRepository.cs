@@ -14,6 +14,10 @@ namespace Repositories
         {
             return od.AddOrderDetail(orderDetail);
         }
+        public List<OrderDetail> GetOrderDetailsByOrderId(int orderId)
+        {
+            return od.GetOrderDetailsByOrderId(orderId);
+        }
 
         public bool DeleteOrderDetail(int orderId, int productId)
         {

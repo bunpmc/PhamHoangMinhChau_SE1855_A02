@@ -11,5 +11,8 @@ namespace Repositories
     {
         public Employee? Login(string username, string password);
         public List<Employee> GetEmployees();
+        public bool AddEmployee(Employee employee);
+        public bool UpdateEmployee(Employee employee);
+        public bool DeleteEmployee(int employeeId);
     }
 }

@@ -24,7 +24,20 @@ namespace Services
             return _employeeRepository.GetEmployees();
         }
 
-    }
+        public bool AddEmployee(Employee employee)
+        {
+            return _employeeRepository.AddEmployee(employee);
+        }
+
+        public bool UpdateEmployee(Employee employee)
+        {
+            return _employeeRepository.UpdateEmployee(employee);
+        }
+        public bool DeleteEmployee(int employeeId)
+        {
+            return _employeeRepository.DeleteEmployee(employeeId);
+
+        }
     
 }
 

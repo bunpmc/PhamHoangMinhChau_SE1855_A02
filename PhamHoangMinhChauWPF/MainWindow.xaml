@@ -39,16 +39,17 @@
                Margin="0,80,0,0"/>
 
         <StackPanel VerticalAlignment="Top" 
-                    HorizontalAlignment="Left" 
-                    Width="300" Margin="255,148,0,0">
+                    HorizontalAlignment="Center" 
+                    Width="300" Margin="0,138,0,0">
             <Button x:Name="btnManageCustomer" Content="Manage Customers" 
                     Style="{StaticResource SimpleButtonStyle}" Click="btnManageCustomer_Click" />
             <Button x:Name="ManageProductsAndCategories" Content="Manage Products and Categories" 
                     Style="{StaticResource SimpleButtonStyle}" Click="ManageProductsAndCategories_Click"/>
             <Button x:Name="btnManageEmployee" Content="Employee Login and Profile" 
-                    Style="{StaticResource SimpleButtonStyle}"/>
+                    Style="{StaticResource SimpleButtonStyle}" Click="btnManageEmployee_Click"/>
             <Button x:Name="btnManageOrder" Content="Process Orders" 
-                    Style="{StaticResource SimpleButtonStyle}"/>
+                    Style="{StaticResource SimpleButtonStyle}" Click="btnManageOrder_Click"/>
+            <Button x:Name="btnReport" Content="Reports" Style="{StaticResource SimpleButtonStyle}" Click="btnReport_Click"/>
             <Button x:Name="btnExit" Content="Quit to Log In Window" 
                     Style="{StaticResource SimpleButtonStyle}" Click="btnExit_Click" 
                     />

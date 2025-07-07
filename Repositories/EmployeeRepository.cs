@@ -19,5 +19,34 @@ namespace Repositories
         {
             return ed.GetEmployees();
         }
+
+        public bool AddEmployee(Employee employee)
+        {
+            return ed.AddEmployee(employee);
+        }
+
+        public bool UpdateEmployee(Employee employee)
+        {
+            return ed.UpdateEmployee(employee);
+        }
+
+        public bool DeleteEmployee(int employeeId)
+        {
+            try
+            {
+                var employee = ed.GetEmployees().FirstOrDefault(e => e.EmployeeId == employeeId);
+                if (employee != null)
+                {
+                    ed.DeleteEmployee(employeeId);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting employee: {ex.Message}");
+                return false;
+            }
+        }
     }
 }

@@ -46,5 +46,26 @@ namespace PhamHoangMinhChauWPF
             productsAndCategoriesWindow.Show();
             Close();
         }
+
+        private void btnManageEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeManagementWindow employeeManagementWindow = new EmployeeManagementWindow();
+            employeeManagementWindow.Show();
+            Close();
+        }
+
+        private void btnManageOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderManagementWindow orderManagementWindow = new OrderManagementWindow();
+            orderManagementWindow.Show();
+            Close();
+        }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+            ReportWindow reportWindow = new ReportWindow();
+            reportWindow.Show();
+            Close();
+        }
     }
 }

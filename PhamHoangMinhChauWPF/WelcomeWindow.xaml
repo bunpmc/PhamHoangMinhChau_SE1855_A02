@@ -51,7 +51,7 @@
                         HorizontalAlignment="Center" 
                         Margin="0,20,0,0">
                 <Button x:Name="btnCustomerLogin" Content="Login As Customer" 
-                        Style="{StaticResource SimpleButtonStyle}" />
+                        Style="{StaticResource SimpleButtonStyle}" Click="btnCustomerLogin_Click" />
                 <Button x:Name="btnEmployeeLogin" Content="Login As Employee" 
                         Style="{StaticResource SimpleButtonStyle}" Click="btnEmployeeLogin_Click"/>
             </StackPanel>

@@ -13,6 +13,10 @@ namespace DataAccessLayer
         {
             return dbContext.Customers.ToList();
         }
+        public Customer? Login(string phone)
+        {
+            return dbContext.Customers.FirstOrDefault(predicate => predicate.Phone == phone);
+        }
         public Customer? SearchCustomerById(int customerId)
         {
             return dbContext.Customers.FirstOrDefault(c => c.CustomerId == customerId);

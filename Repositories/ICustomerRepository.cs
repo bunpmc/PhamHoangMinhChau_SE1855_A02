@@ -11,6 +11,7 @@ namespace Repositories
     {
         public List<Customer> GetCustomers();
         public Customer? SearchCustomerById(int customerId);
+        public Customer? Login(string phone);
         public bool AddCustomer(Customer newCustomer);
         public bool DeleteCustomer(int customerId);
         public bool UpdateCustomer(Customer updatedCustomer);

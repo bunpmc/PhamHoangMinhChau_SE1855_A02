@@ -1,0 +1,46 @@
+﻿<Window x:Class="PhamHoangMinhChauWPF.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sales Report" Height="500" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Sales Report by Period" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+        <GroupBox Grid.Row="1" Header="Date Range" Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Start Date:"/>
+                <DatePicker Grid.Column="1" x:Name="dpStartDate" Margin="0,2,5,2"/>
+                <Label Grid.Column="2" Content="End Date:"/>
+                <DatePicker Grid.Column="3" x:Name="dpEndDate" Margin="0,2,5,2"/>
+                <Button x:Name="btnGenerateReport" Grid.Column="4" Content="Generate Report" Width="120" Click="GenerateReport_Click"/>
+            </Grid>
+        </GroupBox>
+        <ListView Grid.Row="2" x:Name="lvSaleReport" Margin="0,0,0,5" SelectionMode="Single">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Period" Width="100" DisplayMemberBinding="{Binding Period}"/>
+                    <GridViewColumn Header="Total Sales" Width="120" DisplayMemberBinding="{Binding TotalSales, StringFormat=C}"/>
+                    <GridViewColumn Header="Order Count" Width="100" DisplayMemberBinding="{Binding OrderCount}"/>
+                    <GridViewColumn Header="Average Order Value" Width="150" DisplayMemberBinding="{Binding AverageOrder, StringFormat=C}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Close" Width="80" Margin="5" Click="CloseButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

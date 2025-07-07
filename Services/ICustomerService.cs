@@ -10,6 +10,7 @@ namespace Services
     public interface ICustomerService
     {
         public List<Customer> GetCustomers();
+        public Customer? Login(string phone)
         public Customer? SearchCustomerById(int customerId);
         public bool AddCustomer(Customer newCustomer);
         public bool DeleteCustomer(int customerId);

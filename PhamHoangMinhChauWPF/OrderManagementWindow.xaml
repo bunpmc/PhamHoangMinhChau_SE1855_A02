@@ -15,7 +15,7 @@
                    Margin="0,0,0,10"/>
 
         <ListView Grid.Row="1"
-          x:Name="OrdersListView"
+          x:Name="lvOrder"
           Margin="0,0,0,10"
           SelectionMode="Single">
             <ListView.View>
@@ -30,8 +30,8 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnAdd" Content="Add" Width="100" Margin="5" Click="btnAdd_Click"/>
-            <Button x:Name="btnDelete" Content="Delete" Width="80" Margin="5"/>
-            <Button x:Name="btnUpdate" Content="Update" Width="80" Margin="5"/>
+            <Button x:Name="btnDelete" Content="Delete" Width="80" Margin="5" Click="btnDelete_Click"/>
+            <Button x:Name="btnUpdate" Content="Update" Width="80" Margin="5" Click="btnUpdate_Click"/>
         </StackPanel>
     </Grid>
 </Window>

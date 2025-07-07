@@ -56,6 +56,8 @@ namespace PhamHoangMinhChauWPF
             MessageBoxResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
+                WelcomeWindow welcomeWindow = new WelcomeWindow();
+                welcomeWindow.Show();
                 Close();
             }
         }

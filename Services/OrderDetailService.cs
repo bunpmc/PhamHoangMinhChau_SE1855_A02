@@ -20,7 +20,10 @@ namespace Services
         {
             return _orderDetailRepository.AddOrderDetail(newOrderDetail);
         }
-
+        public List<OrderDetail> GetOrderDetailsByOrderId(int orderId)
+        {
+            return _orderDetailRepository.GetOrderDetailsByOrderId(orderId);
+        }
         public bool DeleteOrderDetail(int orderId, int productId)
         {
             return _orderDetailRepository.DeleteOrderDetail(orderId, productId);
@@ -28,17 +31,12 @@ namespace Services
 
         public List<OrderDetail> GetOrderDetails()
         {
-            throw new NotImplementedException();
-        }
-
-        public OrderDetail? SearchOrderDetailById(int orderDetailId)
-        {
-            throw new NotImplementedException();
+            return _orderDetailRepository.GetOrderDetails();
         }
 
         public bool UpdateOrderDetail(OrderDetail updatedOrderDetail)
         {
-            throw new NotImplementedException();
+            return _orderDetailRepository.UpdateOrderDetail(updatedOrderDetail);
         }
     }
 }

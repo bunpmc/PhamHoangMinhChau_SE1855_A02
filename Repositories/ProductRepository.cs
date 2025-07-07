@@ -15,6 +15,10 @@ namespace Repositories
             return pd.AddProduct(product);
         }
 
+        public Product? GetProductById(int productId)
+        {
+            return pd.GetProductById(productId);
+        }
         public bool DeleteProduct(int productId)
         {
             return pd.DeleteProduct(productId);

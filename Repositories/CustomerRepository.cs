@@ -14,6 +14,11 @@ namespace Repositories
         {
             return cd.GetCustomers();
         }
+
+        public Customer? Login(string phone)
+        {
+            return cd.Login(phone);
+        }
         public bool AddCustomer(Customer newCustomer)
         {
             return cd.AddCustomer(newCustomer);

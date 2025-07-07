@@ -22,6 +22,11 @@ namespace DataAccessLayer
                 .ToList();
         }
 
+        public Product? GetProductById(int productId)
+        {
+            return context.Products.FirstOrDefault(p => p.ProductId == productId);
+        }
+
         public bool AddProduct(Product product)
         {
             try

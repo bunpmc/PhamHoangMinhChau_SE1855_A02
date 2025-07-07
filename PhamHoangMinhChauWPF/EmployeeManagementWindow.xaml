@@ -1,0 +1,32 @@
+﻿<Window x:Class="PhamHoangMinhChauWPF.EmployeeManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Employee Management" Height="450" Width="791">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Employee Management" FontSize="18" FontWeight="Bold" Margin="0,0,0,5"/>
+        <ListView Grid.Row="1" x:Name="lvEmployee" Margin="0,0,0,5" SelectionMode="Single">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EmployeeId}"/>
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Username" Width="120" DisplayMemberBinding="{Binding UserName}"/>
+                    <GridViewColumn Header="Job Title" Width="120" DisplayMemberBinding="{Binding JobTitle}"/>
+                    <GridViewColumn Header="Birth Date" Width="100" DisplayMemberBinding="{Binding BirthDate, StringFormat=d}"/>
+                    <GridViewColumn Header="Hire Date" Width="100" DisplayMemberBinding="{Binding HireDate, StringFormat=d}"/>
+                    <GridViewColumn Header="Address" Width="150" DisplayMemberBinding="{Binding Address}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="300,355,0,0" Grid.RowSpan="2" Width="471">
+            <Button x:Name="btnAdd" Content="Add" Width="100" Margin="5" Click="btnAdd_Click" />
+            <Button x:Name="btnUpdate" Content="Update" Width="100" Margin="5" Click="btnUpdate_Click" />
+            <Button x:Name="btnDelete" Content="Delete" Width="100" Margin="5" Click="btnDelete_Click" />
+            <Button x:Name="btnReturn" Content="Return to Main Screen" Width="129" Margin="5" Click="btnReturn_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

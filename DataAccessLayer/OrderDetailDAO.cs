@@ -13,6 +13,10 @@ namespace DataAccessLayer
         {
             return context.OrderDetails.ToList();
         }
+        public List<OrderDetail> GetOrderDetailsByOrderId(int orderId)
+        {
+            return context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+        }
         public bool AddOrderDetail(OrderDetail orderDetail)
         {
             try
